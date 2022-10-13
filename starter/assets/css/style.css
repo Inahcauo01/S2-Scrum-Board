@@ -1,0 +1,14 @@
+.pace {
+    display: none;
+}
+
+.main-style {
+    min-height: 100vh;
+    background: url(../img/cover/cover-scrum-board.png) no-repeat fixed;
+    background-size: 360px;
+    background-position: right bottom;
+}
+/* .btn{
+    padding: 3px 10px;
+    border-radius: 20px;
+} */

@@ -8,7 +8,10 @@
     background-size: 360px;
     background-position: right bottom;
 }
-/* .btn{
-    padding: 3px 10px;
-    border-radius: 20px;
-} */
+.col-sm-11{
+    text-align: start;
+}
+.btn-sm{
+    padding: 2px 3px;
+    font-size: 11px;
+}

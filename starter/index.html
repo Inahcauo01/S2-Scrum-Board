@@ -34,10 +34,9 @@
 				</div>
 				
 				<div class="d-flex align-self-center">
-					<button class="btn btn-success rounded-pill"><i class="fa fa-plus"></i> Add Task</a>
+					<button class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#Modal"><i class="fa fa-plus"></i> Add Task</a>
 				</div>
 			</div>
-			
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="bg-dark mt-3 rounded-top">
@@ -48,10 +47,10 @@
 						<div class="d-flex flex-column" id="to-do-tasks">
 							<!-- TO DO TASKS HERE -->
 							<button class="border d-flex">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-question text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Keep all the updated requirements in one place</div>
 									<div class="">
 										<div class="">#1 created in 2022-10-08</div>
@@ -64,10 +63,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-question text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Consider creating an acceptance criteria list</div>
 									<div class="">
 										<div class="">#2 created in 2022-10-08</div>
@@ -84,10 +83,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-question text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Provide examples, credentials, etc</div>
 									<div class="">
 										<div class="">#3 created in 2022-10-08</div>
@@ -100,10 +99,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-question text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Annotate</div>
 									<div class="">
 										<div class="">#4 created in 2022-10-08</div>
@@ -116,10 +115,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-question text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Use charts and diagrams</div>
 									<div class="">
 										<div class="">#5 created in 2022-10-08</div>
@@ -143,10 +142,10 @@
 						<div class="d-flex flex-column" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa fa-circle-notch text-success"></i>
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Describe steps to reproduce an issue</div>
 									<div class="">
 										<div class="">#6 created in 2022-10-08</div>
@@ -159,10 +158,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa fa-circle-notch text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Provide access</div>
 									<div class="">
 										<div class="">#7 created in 2022-10-08</div>
@@ -175,10 +174,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa fa-circle-notch text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Provide environment information</div>
 									<div class="">
 										<div class="">#8 created in 2022-10-08</div>
@@ -191,10 +190,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa fa-circle-notch text-success"></i>
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Provide a link to an exception and/or a stack trace</div>
 									<div class="">
 										<div class="">#9 created in 2022-10-08</div>
@@ -218,10 +217,10 @@
 						<div class="d-flex flex-column" id="done-tasks">
 							<!-- DONE TASKS HERE -->
 							<button class="border d-flex">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-check text-success"></i>
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Provide access to logs</div>
 									<div class="">
 										<div class="">#10 created in 2022-10-08</div>
@@ -234,10 +233,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-check text-success"></i>
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Provide access to the affected server or database dump</div>
 									<div class="">
 										<div class="">#11 created in 2022-10-08</div>
@@ -250,10 +249,10 @@
 								</div>
 							</button>
 							<button class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-check text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Make a screencast</div>
 									<div class="">
 										<div class="">#12 created in 2022-10-08</div>
@@ -266,10 +265,10 @@
 								</div>
 							</button>
 							<button  class="d-flex border">
-								<div class="col-sm-1">
+								<div class="col-sm-1 pe-2">
 									<i class="fa-regular fa-circle-check text-success"></i> 
 								</div>
-								<div class="col-sm-11">
+								<div class="col-sm-11 text-start">
 									<div class="fw-bolder">Provide contact information</div>
 									<div class="">
 										<div class="">#13 created in 2022-10-08</div>
@@ -296,8 +295,67 @@
 	<!-- END #app -->
 	
 	<!-- TASK MODAL -->
-	<div class="modal fade" id="modal-task">
+	<div class="modal fade" id="Modal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<!-- Modal content goes here -->
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Add Task</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="mb-3">
+						<label for="recipient-name" class="col-form-label">Title</label>
+						<input type="text" class="form-control" id="recipient-name">
+					</div>
+					<div class="mb-3">
+						<label for="" class="col-form-label">Type</label>
+						<div class="form-check ms-3">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+							<label class="form-check-label" for="flexRadioDefault1">
+							Feature
+							</label>
+						</div>
+						<div class="form-check ms-3">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+							<label class="form-check-label" for="flexRadioDefault2">
+								Bug
+							</label>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="Priority" class="col-form-label">Priority</label>
+						<select class="form-select" aria-label="Default select example" id="Priority">
+							<option selected>Please select</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="Status" class="col-form-label">Status</label>
+						<select class="form-select" aria-label="Default select example" id="Status">
+							<option selected>Please select</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="Date" class="col-form-label">Date</label>
+						<input type="date" class="form-control" id="Date">
+					</div>
+					<div class="mb-3">
+						<label for="message-text" class="col-form-label">Description</label>
+						<textarea class="form-control" id="message-text"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-light text-black border" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+
 	</div>
 	
 	<!-- ================== BEGIN core-js ================== -->

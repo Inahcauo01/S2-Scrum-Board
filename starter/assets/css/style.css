@@ -8,10 +8,14 @@
     background-size: 360px;
     background-position: right bottom;
 }
-/* .col-sm-11{
-    text-align: start;
-} */
 .btn-sm{
     padding: 2px 3px;
     font-size: 11px;
+}
+.text-desc{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

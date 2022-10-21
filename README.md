@@ -1,4 +1,4 @@
-# Sprint2
+# Scrum Board
 Voici le design des maquettes :
 
 version desktop :

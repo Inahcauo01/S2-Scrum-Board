@@ -1,18 +1,17 @@
 
-function allowDrop(ev) {
-    ev.preventDefault();
-  }
+// function allowDrop(ev) {
+//     ev.preventDefault();
+//   }
   
-  function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
+//   function drag(ev) {
+//     ev.dataTransfer.setData("text", ev.target.id);
+//   }
   
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
-
+//   function drop(ev) {
+//     ev.preventDefault();
+//     var data = ev.dataTransfer.getData("text");
+//     ev.target.appendChild(document.getElementById(data));
+//   }
 
 document.getElementById("addtask").addEventListener("click",createTask);
 document.getElementById("save").addEventListener("click",saveTask);
@@ -91,9 +90,11 @@ function saveTask() {
     let date = document.getElementById("Date");
     let desc = document.getElementById("desc");
     let type = document.querySelector("input[name='type']:checked");
-
+    
+    if(priority.value=="0" || statu.value=="0" || !titre.value || !date.value || !desc.value){
+        alert('Veuillez remplir les champs :/');
+    }else{
     // Créez task object
-    //alert(type);
     let task={
         'title'         :   titre.value,
         'type'          :   type.value,
@@ -108,6 +109,7 @@ function saveTask() {
     // refresh tasks
     clearTasks();
     display();
+}
     
 }
 
@@ -122,7 +124,6 @@ var idx;
 function editTask(index) {
     // Initialisez task form
     idx=index;
-    
     // Affichez updates
     titre.value= tasks[index].title;
     type = tasks[index].type;
@@ -131,17 +132,10 @@ function editTask(index) {
     date.value= tasks[index].date;
     desc.value= tasks[index].description;
     
-    
-    if(type==='Bug'){
-        alert(type);
-        
-        document.querySelector("#bug").checked = true;
-        document.getElementById("feature").checked = false;
-
-        // document.getElementById("feature").checked = false;
-        //document.getElementById("bug").value="Bug";
+    if(type == "Bug"){
+        document.getElementById("Mbug").checked= true;
     }else{
-        document.getElementById("feature").checked = true;
+        document.getElementById("Mfeature").checked= true;
     }
     // Delete Button
 
@@ -194,8 +188,6 @@ function initTaskForm() {
     // Hide all action buttons
 }
 
-function reloadTasks() {
-    // Remove tasks elements
-
-    // Set Task count
+function returnChecked() {
+    
 }

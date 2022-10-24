@@ -67,6 +67,10 @@ function editTask(index) {
     }else{
         document.getElementById("Mfeature").checked= true;
     }
+    // document.getElementById("edit").onclick=()=>{
+    //     updateTask(index);
+    // }
+    // document.getElementById("edit").addEventListener("click",()=>{updateTask(index)});
     // Delete Button
 
     // Définir l’index en entrée cachée pour l’utiliser en Update et Delete

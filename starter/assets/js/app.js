@@ -50,38 +50,32 @@ let statu = document.getElementById("modifiedStatus-select");
 let date = document.getElementById("date-modifier");
 let description = document.getElementById("modifiedMessage-text");
 
-var indice;
+// var indice;
 function editTask(index) {
-    // Initialisez task form
-    indice=index;
-    // Affichez updates
-    titre.value= tasks[index].title;
-    type = tasks[index].type;
-    priority.value= tasks[index].priority;
-    statu.value= tasks[index].status;
-    date.value= tasks[index].date;
-    description.value= tasks[index].description;
-    
-    if(type == "Bug"){
-        document.getElementById("Mbug").checked= true;
-    }else{
-        document.getElementById("Mfeature").checked= true;
-    }
+    // titre.value= tasks[index].title;
+    // type = tasks[index].type;
+    // priority.value= tasks[index].priority;
+    // statu.value= tasks[index].status;
+    // date.value= tasks[index].date;
+    // description.value= tasks[index].description;
+    // if(type == "Bug"){
+    //     document.getElementById("Mbug").checked= true;
+    // }else{
+    //     document.getElementById("Mfeature").checked= true;
+    // }
+    // // Methode 2 
     // document.getElementById("edit").onclick=()=>{
     //     updateTask(index);
     // }
-    // document.getElementById("edit").addEventListener("click",()=>{updateTask(index)});
-    // Delete Button
-
-    // Définir l’index en entrée cachée pour l’utiliser en Update et Delete
-
-    // Definir FORM INPUTS
-
-    // Ouvrir Modal form
+    // document.getElementById("delete").onclick=()=>{
+    //     deleteTask(index);
+    // }
+    
+    
 }
 
-function updateTask() {
-
+function updateTask(indice) {
+    
     // GET TASK ATTRIBUTES FROM INPUTS
     let titre = document.getElementById("modified-name");
     let type = document.querySelector("input[name='radio-type']:checked");
@@ -104,9 +98,10 @@ function updateTask() {
     
 }
 
-function deleteTask() {
+function deleteTask(indice) {
     // Get index of task in the array
     // if(confirm("La tache va etre supprimer "))
+    if(confirm("voulez vous vraiment supprimer cette tache ?"))
     tasks.splice(indice,1);
     // Remove task from array by index splice function
 

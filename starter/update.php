@@ -204,7 +204,10 @@
 			document.getElementById('btnSave').style.display = 'block';
 			
 		});
-		
+		function supp($id){
+		if(confirm("voulez vous vraiment supprimer cette tache ?"))
+		document.getElementById("deleteclick"+$id).click();
+	};
 	</script>
 	
 </body>

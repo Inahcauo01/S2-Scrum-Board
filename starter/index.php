@@ -50,7 +50,6 @@
 					<div class="bg-dark mt-3 rounded-top">
 						<div class="bg-dark text-white pt-2 rounded-top">
 							<h4 class="ps-3">To do (<span id="to-do-tasks-count"><?php countertask(1) ?></span>)</h4>
-
 						</div>
 						<div class="d-flex flex-column shadow" id="to-do-tasks">
 							<!-- TO DO TASKS HERE -->
@@ -64,7 +63,6 @@
 					<div class="bg-dark mt-3 rounded-top">
 						<div class="bg-dark text-white pt-2 rounded-top">
 							<h4 class="ps-3">In Progress (<span id="in-progress-tasks-count"><?php countertask(2) ?></span>)</h4>
-
 						</div>
 						<div class="d-flex flex-column shadow" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
@@ -78,7 +76,6 @@
 					<div class="bg-dark mt-3 rounded-top">
 						<div class="bg-dark text-white pt-2 rounded-top" >
 							<h4 class="ps-3">Done (<span id="done-tasks-count"><?php countertask(3) ?></span>)</h4>
-
 						</div>
 						<div class="d-flex flex-column shadow" id="done-tasks">
 							<!-- DONE TASKS HERE -->
@@ -98,15 +95,14 @@
 		<!-- END scroll-top-btn -->
 	</div>
 	<!-- END #app -->
-	<!--BD-->
-	
+
 	<!-- TASK MODAL -->
 	<div class="modal fade" id="modal-task">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form action="scripts.php" method="POST" id="form-task">
 					<div class="modal-header">
-						<h5 class="modal-title">Add Task</h5>
+						<h5 id="modalTitle">Add Task</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
 					<div class="modal-body">
@@ -114,13 +110,13 @@
 							<input type="hidden" name="task-id" id="task-id">
 							<div class="mb-3">
 								<label class="form-label">Title</label>
-								<input type="text" class="form-control" id="task-title" name="task-title"/>
+								<input type="text" class="form-control" id="task-title" name="task-title" required/>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Type</label>
 								<div class="ms-3">
 									<div class="form-check mb-1">
-										<input class="form-check-input" name="task-type" type="radio" value="1" id="task-type-feature"/>
+											<input class="form-check-input" name="task-type" type="radio" value="1" id="task-type-feature" checked/>
 										<label class="form-check-label" for="task-type-feature">Feature</label>
 									</div>
 									<div class="form-check">
@@ -134,36 +130,33 @@
 								<label class="form-label">Priority</label>
 								<select class="form-select" id="task-priority" name="task-priority">
 									<option value="">Please select</option>
-									<option value="1">Low</option>
-									<option value="2">Medium</option>
-									<option value="3">High</option>
+									<option id="low" 	value="1">Low</option>
+									<option id="medium" value="2">Medium</option>
+									<option id="high" 	value="3">High</option>
 								</select>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Status</label>
 								<select class="form-select" id="task-status" name="task-status">
 									<option value="">Please select</option>
-									<option value="1">To Do</option>
-									<option value="2">In Progress</option>
-									<option value="3">Done</option>
+									<option id="todo" 		value="1">To Do</option>
+									<option id="inProgress" value="2">In Progress</option>
+									<option id="done" 		value="3">Done</option>
 								</select>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Date</label>
-								<input type="datetime-local" class="form-control" id="task-date" name="task-date"/>
+								<input type="datetime-local" class="form-control" id="task-date" name="task-date" required/>
 							</div>
 							<div class="mb-0">
 								<label class="form-label">Description</label>
-								<textarea class="form-control" rows="10" id="task-description" name="task-description"></textarea>
+								<textarea class="form-control" rows="10" id="task-description" name="task-description" required></textarea>
 							</div>
-						
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-
-						<button type="submit" name="delete" class="btn btn-danger task-action-btn" id="btnDelete">Delete</button>
 						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="btnUpdate">Update</button>
-						<button type="submit" name="save" class="btn btn-primary task-action-btn" id="btnSave">Save</button>
+						<button type="submit" name="save" 	class="btn btn-primary task-action-btn" id="btnSave">Save</button>
 					</div>
 				</form>
 			</div>
@@ -179,16 +172,44 @@
 	<script src="assets/js/app.js"></script> -->
 	<!-- <script src="scriptss.js"></script> -->
 	<script>
-		document.getElementById('addtask').addEventListener('click', ()=>{
-    document.getElementById('form-task').reset();
-    document.getElementById('btnSave').style.display = 'block';
-    document.getElementById('btnUpdate').style.display = 'none';
-    document.getElementById('btnDelete').style.display = 'none';
+function updateButton(id, title, type, status, priority, date, description){
+
+document.getElementById("modalTitle").innerHTML   = "EDIT TASK";
+document.getElementById('btnSave').style.display  = 'none';
+document.getElementById('btnUpdate').style.display= 'block';
+
+
+document.getElementById("task-id").value		  = id;
+document.getElementById("task-title").value 	  = title;
+document.getElementById("task-date").value 		  = date;
+document.getElementById("task-description").value = description;
+
+if(type == 1) 			document.getElementById("task-type-feature").checked = true;
+else 					document.getElementById("task-type-bug").checked 	 = true;
+
+if(priority == 1) 		document.getElementById("low").selected	   = true;
+else if(priority == 2) 	document.getElementById("medium").selected = true;
+else if(priority == 3)	document.getElementById("high").selected   = true;
+
+if(status == 1) 		document.getElementById("todo").selected 	   = true;
+else if(status == 2) 	document.getElementById("inProgress").selected = true;
+else if(status == 3)	document.getElementById("done").selected 	   = true;
+
+}
+
+
+	document.getElementById('addtask').addEventListener('click', ()=>{
+		document.getElementById('form-task').reset();
+		document.getElementById('btnSave').style.display   = 'block';
+		document.getElementById('btnUpdate').style.display = 'none';
 });
 		function supp($id){
+		$('#modal-task').modal('hide');
 		if(confirm("voulez vous vraiment supprimer cette tache ?"))
 		document.getElementById("deleteclick"+$id).click();
 	};
+
+	
 	</script>
 </body>
 </html>

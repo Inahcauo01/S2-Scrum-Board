@@ -19,3 +19,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.btnIcon{
+    visibility: hidden;
+    cursor: pointer;
+}
+.btnTaskIcon:hover .btnIcon{
+    visibility: visible;
+}
+.btnTaskIcon:hover .text-desc{
+    -webkit-line-clamp: 4;
+    transition: 2s;
+}

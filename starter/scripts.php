@@ -13,7 +13,7 @@
     {   
         include('database.php');
         $icon="";
-        $sql = "SELECT ts.id id, title,task_datetime,description,t.name type_name, p.name priority_name from tasks ts,status s,types t,priorities p 
+        $sql = "SELECT ts.id id, title, type_id, status_id, priority_id ,task_datetime,description,t.name type_name, p.name priority_name from tasks ts,status s,types t,priorities p 
                     where ts.type_id=t.id and ts.status_id=s.id and ts.priority_id=p.id and ";
         
         if($containerTasks=="todo"){
@@ -33,24 +33,30 @@
         if(mysqli_num_rows($result)>0){
             while($task = mysqli_fetch_assoc($result)){
         echo "
-            <button name=\"btnTask\" class=\"border d-flex py-2 task\" onclick=\"editTask(".$task["id"].")\">
+            <button name=\"btnTask\" class=\"border d-flex py-2 task btnTaskIcon\"  
+            onclick=\"updateButton(".$task["id"].",'".$task["title"]."','".$task["type_id"]."','".$task["status_id"]."','".$task["priority_id"]."','".$task["task_datetime"]."','".$task["description"]."')\">
                 <div class=\"col-sm-1 pe-2\">
                     <i class=\"". $icon ."\"></i> 
                 </div>
                 <div class=\"col-sm-11 text-start\">
-                    <div class=\"fw-bolder\">".$task["title"]."</div>
+                    <div class=\"d-flex justify-content-between\">
+                        <div class=\"fw-bolder\">".$task["title"]."</div>
+                        <i onclick=\"supp(".$task["id"].")\" class=\"fa-regular fa-square-minus text-danger fa-2x btnIcon\"></i>
+                    </div>
                     <div>
                         <div>#".$task["id"] ." created in ".$task["task_datetime"]."</div>
                         <div class=\"text-desc\" title=\"".$task["description"]."\">".$task["description"]."</div>
                     </div>
-                    <div class=\"d-flex justify-content-between pt-2\">
-                        <div>
-                            <span class=\"btn btn-primary btn-sm\">".$task["priority_name"]."</span>
-                            <span class=\"btn bg-light-600 btn-sm\">".$task["type_name"]."</span>
+                        <div class=\"d-flex justify-content-between\">
+                            <div>
+                                <span class=\"btn btn-primary btn-sm\">".$task["priority_name"]."</span>
+                                <span class=\"btn bg-light-600 btn-sm\">".$task["type_name"]."</span>
+                            </div>
+                            <div>
+                                <i class=\"fa-regular fa-pen-to-square text-secondary btnIcon\" data-bs-toggle=\"modal\" data-bs-target=\"#modal-task\" ></i>
+                            </div>
                         </div>
                         <div>
-                            <a href=\"update.php?Upid=".$task["id"]."\" id=\"hupdate\"><span class=\"btn bg-light-600 btn-sm\"><i class=\"fa-solid fa-pen-to-square text-warning\"></i></span></a>
-                            <i class=\"fa-solid fa-trash text-danger\" id=\"deleteclick2".$task["id"]."\" onclick=\"supp(".$task["id"].")\"\"></i></span>
                             <a href=\"index.php?Suppid=".$task["id"]."\" id=\"deleteclick".$task["id"]."\"></a>
                         <div>
                     </div>
